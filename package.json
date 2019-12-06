@@ -1,0 +1,24 @@
+{
+  "name": "svg-trace-loader",
+  "version": "1.0.0",
+  "description": "Trace SVG",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/privatenumber/svg-trace-loader.git"
+  },
+  "author": "Hiroki Osame <hiroki.osame@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/privatenumber/svg-trace-loader/issues"
+  },
+  "homepage": "https://github.com/privatenumber/svg-trace-loader#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "potrace": "github:tooolbox/node-potrace#v2.1.3",
+    "sharp": "^0.23.4"
+  }
+}
