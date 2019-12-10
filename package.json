@@ -2,7 +2,12 @@
   "name": "svg-trace-loader",
   "version": "1.0.0",
   "description": "Webpack loader to trace SVGs",
-  "keywords": ["webpack", "svg", "trace", "flatten"],
+  "keywords": [
+    "webpack",
+    "svg",
+    "trace",
+    "flatten"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,6 +24,7 @@
   "homepage": "https://github.com/privatenumber/svg-trace-loader#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
+    "loader-utils": "^1.2.3",
     "potrace": "github:tooolbox/node-potrace#v2.1.3",
     "sharp": "^0.23.4"
   }
