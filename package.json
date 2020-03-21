@@ -28,7 +28,7 @@
   "homepage": "https://github.com/privatenumber/svg-trace-loader#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
-    "loader-utils": "^1.2.3",
+    "loader-utils": "^2.0.0",
     "potrace": "github:tooolbox/node-potrace#v2.1.3",
     "sharp": "^0.23.4"
   },
