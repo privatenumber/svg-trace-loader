@@ -29,7 +29,7 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "loader-utils": "^2.0.0",
-    "potrace": "github:tooolbox/node-potrace#v2.1.3",
+    "potrace": "github:privatenumber/node-potrace#v2.1.4",
     "sharp": "^0.25.2"
   },
   "devDependencies": {
