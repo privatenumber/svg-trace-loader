@@ -63,8 +63,31 @@ function build(input, loaderConfig = {}) {
 }
 
 test('Trace SVG', async () => {
+	jest.setTimeout(5000);
 	const built = await build(svgAsset);
 	const { default: builtSvg } = eval(built);
+	expect(/\<path/.test(builtSvg)).toBe(true);
+});
 
+test('Trace SVG w/ dimensions', async () => {
+	jest.setTimeout(5000);
+	const built = await build(svgAsset, {
+		dimensions: {
+			width: 136,
+			height: 136,
+		},
+	});
+	const { default: builtSvg } = eval(built);
+	expect(/width="136"/.test(builtSvg)).toBe(true);
+	expect(/height="136"/.test(builtSvg)).toBe(true);
+});
+
+
+test('Trace SVG w/ density', async () => {
+	jest.setTimeout(1000);
+	const built = await build(svgAsset, {
+		density: 1000,
+	});
+	const { default: builtSvg } = eval(built);
 	expect(/\<path/.test(builtSvg)).toBe(true);
 });
