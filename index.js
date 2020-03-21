@@ -26,11 +26,15 @@ module.exports = function(content, map, meta) {
 	const callback = this.async();
 
 	(async () => {
-		const options = loaderUtils.getOptions(this) || {};
 		let svg = content;
 		const $ = cheerio.load(svg, { xmlMode: true });
 		const $svg = $('svg');
-		const dimensions = options.dimensions || getSvgDimensions($svg);
+
+		const options = loaderUtils.getOptions(this) || {};
+		const {
+			density = 2400,
+			dimensions = getSvgDimensions($svg),
+		} = options;
 
 		assert(dimensions.width, 'SVG missing width');
 		assert(dimensions.height, 'SVG missing height');
@@ -39,9 +43,7 @@ module.exports = function(content, map, meta) {
 		// Since we're using a high rendering density, a high SVG dimension creates too big of a PNG and crashes
 		$svg.attr({ width: 20, height: 20 });
 
-		svg = $.html();
-
-		const buf = await sharp(Buffer.from(svg), { density: 2400 }).toBuffer();
+		const buf = await sharp(Buffer.from($.html()), { density }).toBuffer();
 		svg = await trace(buf, dimensions);
 
 		return svg;
